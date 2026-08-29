@@ -4,7 +4,6 @@ pydantic==2.9.2
 pydantic-settings==2.5.2
 sqlalchemy==2.0.35
 asyncpg==0.29.0
-psycopg2-binary==2.9.9
 alembic==1.13.3
 pandas==2.2.3
 duckdb==1.1.1
