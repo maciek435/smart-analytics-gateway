@@ -3,6 +3,7 @@ from sqlalchemy.orm import Mapped, mapped_column
 from sqlalchemy.dialects.postgresql import JSONB, UUID
 from datetime import datetime
 from uuid import UUID as PyUUID
+from decimal import Decimal
 
 from app.db import Base
 
@@ -21,7 +22,7 @@ class CleanTransaction(Base):
     id: Mapped[int] = mapped_column(primary_key=True)
     raw_id: Mapped[int] = mapped_column(ForeignKey("raw_transactions.id"))
     external_ref: Mapped[str | None] = mapped_column(nullable=True)
-    amount: Mapped[float] = mapped_column(Numeric(18, 2), nullable=False)
+    amount: Mapped[Decimal] = mapped_column(Numeric(18, 2), nullable=False)
     currency: Mapped[str] = mapped_column(String(3), nullable=False)
     transaction_date: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)
     status: Mapped[str] = mapped_column(String, nullable=False)
