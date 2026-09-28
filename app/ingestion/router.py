@@ -15,7 +15,7 @@ async def ingest_transactions(request: IngestBatchRequest, db:AsyncSession = Dep
     raw_records = []
     for transaction in request.transactions:
         raw_record = RawTransaction(
-            payload = transaction.model_dump(),
+            payload = transaction.model_dump(exclude_unset=True),
             source_id = request.source_id,
             ingestion_batch = batch_id,
         )
