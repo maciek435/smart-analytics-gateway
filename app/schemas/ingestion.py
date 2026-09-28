@@ -1,16 +1,13 @@
 from pydantic import BaseModel, ConfigDict
-from decimal import Decimal
-from datetime import datetime
 from uuid import UUID as PyUUID
-from typing import Literal
+from typing import Literal, Any
 
 class TransactionPayload(BaseModel):
-    external_ref: str | None = None
-    amount: Decimal | None = None
-    currency: str | None = None
-    timestamp: datetime | None = None
+    external_ref: Any = None
+    amount: Any = None
+    currency: Any = None
+    timestamp: Any = None
     model_config = ConfigDict(extra="allow")
-
 
 class IngestBatchRequest(BaseModel):
     source_id : int
