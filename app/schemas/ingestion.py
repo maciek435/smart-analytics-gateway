@@ -1,4 +1,4 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 from decimal import Decimal
 from datetime import datetime
 from uuid import UUID as PyUUID
@@ -9,6 +9,8 @@ class TransactionPayload(BaseModel):
     amount: Decimal | None = None
     currency: str | None = None
     timestamp: datetime | None = None
+    model_config = ConfigDict(extra="allow")
+
 
 class IngestBatchRequest(BaseModel):
     source_id : int
