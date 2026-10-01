@@ -30,7 +30,14 @@ def validate_amount(df):
     df.loc[invalid_amount_mask, "issue_type"] = "invalid_amount"
     df.loc[invalid_amount_mask, "issue_detail"] = "Amount is missing, zero, or negative"
 
+    return df
 
+def validate_currency(df):
+    df["currency"] = df["currency"].str.strip().str.upper()
 
+    invalid_currency_mask = (df["currency"].isna()) | (df["currency"].str.len() != 3)
+    df.loc[invalid_currency_mask, "issue_type"] = "invalid_currency"
+    df.loc[invalid_currency_mask, "issue_detail"] = "Currency is missing or not 3 characters long"
 
     return df
+
