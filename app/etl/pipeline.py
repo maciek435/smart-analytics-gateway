@@ -19,4 +19,18 @@ async def extract_raw_transactions(db: AsyncSession):
 
     return df
 
+def validate_amount(df):
+    df["issue_type"] = None
+    df["issue_detail"] = None
 
+    df["amount"] = pd.to_numeric(df["amount"], errors="coerce")
+
+    invalid_amount_mask = (df["amount"] < 0) | (df["amount"] == 0) | (df["amount"].isna())
+
+    df.loc[invalid_amount_mask, "issue_type"] = "invalid_amount"
+    df.loc[invalid_amount_mask, "issue_detail"] = "Amount is missing, zero, or negative"
+
+
+
+
+    return df
