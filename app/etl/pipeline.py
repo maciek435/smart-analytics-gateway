@@ -41,3 +41,10 @@ def validate_currency(df):
 
     return df
 
+def validate_external_ref(df):
+    df["external_ref"] = df["external_ref"].str.strip()
+    missing_ref_mask = (df["external_ref"].isna())
+    df.loc[missing_ref_mask, "external_ref"] = "GENERATED-" + df["raw_id"].astype(str)
+
+    return df
+
