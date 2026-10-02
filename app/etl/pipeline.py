@@ -1,7 +1,10 @@
 import pandas as pd
 from sqlalchemy.ext.asyncio import AsyncSession
-from sqlalchemy import select
+from sqlalchemy import select, update
+from decimal import Decimal
 
+from app.models.transactions import CleanTransaction
+from app.models.quality import DataQualityIssue
 from app.models import RawTransaction
 
 async def extract_raw_transactions(db: AsyncSession):
@@ -47,4 +50,48 @@ def validate_external_ref(df):
     df.loc[missing_ref_mask, "external_ref"] = "GENERATED-" + df["raw_id"].astype(str)
 
     return df
+
+async def load_transformed_data(df, db: AsyncSession):
+    
+    processed_raw_ids = df["raw_id"].tolist()
+
+    clean_df = df[df["issue_type"].isna()]
+    error_df = df[df["issue_type"].notna()]
+
+    clean_records = []
+    for _, row in clean_df.iterrows():
+        clean_record = CleanTransaction(
+            raw_id = row["raw_id"],
+            amount = Decimal(str(row["amount"])),
+            currency = row["currency"],
+            transaction_date = row["timestamp"],
+            source_id  = row["source_id"],
+            quality_flag = "ok",
+        )
+        clean_records.append(clean_record)
+
+    error_records = []
+    for _, row in error_df.iterrows():
+        error_record = DataQualityIssue(
+            raw_id = row["raw_id"],
+            issue_type = row["issue_type"],
+            detail = row["issue_detail"],
+        )
+
+        error_records.append(error_record)
+
+    db.add_all(clean_records)
+    db.add_all(error_records)
+
+    stmt = (
+        update(RawTransaction)
+        .where(RawTransaction.id.in_(processed_raw_ids))
+        .values(processed=True)
+    )
+    await db.execute(stmt)
+    await db.commit()
+
+    return len(clean_records), len(error_records)
+
+
 
