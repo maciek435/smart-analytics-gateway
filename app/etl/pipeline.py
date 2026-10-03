@@ -23,40 +23,61 @@ async def extract_raw_transactions(db: AsyncSession):
     return df
 
 def validate_amount(df):
-    df["issue_type"] = None
-    df["issue_detail"] = None
-
     df["amount"] = pd.to_numeric(df["amount"], errors="coerce")
 
     invalid_amount_mask = (df["amount"] < 0) | (df["amount"] == 0) | (df["amount"].isna())
+    invalid_rows = df[invalid_amount_mask]
 
-    df.loc[invalid_amount_mask, "issue_type"] = "invalid_amount"
-    df.loc[invalid_amount_mask, "issue_detail"] = "Amount is missing, zero, or negative"
+    issues = []
+    for _, row in invalid_rows.iterrows():
+        issues.append({
+            "raw_id": row["raw_id"],
+            "issue_type": "invalid_amount",
+            "detail": "Amount is missing, zero, or negaive",
+        })
 
-    return df
+    return df, issues
 
 def validate_currency(df):
     df["currency"] = df["currency"].str.strip().str.upper()
 
     invalid_currency_mask = (df["currency"].isna()) | (df["currency"].str.len() != 3)
-    df.loc[invalid_currency_mask, "issue_type"] = "invalid_currency"
-    df.loc[invalid_currency_mask, "issue_detail"] = "Currency is missing or not 3 characters long"
+    invalid_rows = df[invalid_currency_mask]
 
-    return df
+    issues = []
+    for _, row in invalid_rows.iterrows():
+        issues.append({
+            "raw_id": row["raw_id"],
+            "issue_type": "invalid_currency",
+            "detail": "Currency is missing or not 3 characters long",
+        })
+
+    return df, issues
 
 def validate_external_ref(df):
     df["external_ref"] = df["external_ref"].str.strip()
     missing_ref_mask = (df["external_ref"].isna())
+    missing_rows = df[missing_ref_mask]
+    issues = []
+    for _, row in missing_rows.iterrows():
+        issues.append({
+            "raw_id": row["raw_id"],
+            "issue_type": "generated_external_ref",
+            "detail": "external_ref was missing, generated a temporary one",
+        })
+
     df.loc[missing_ref_mask, "external_ref"] = "GENERATED-" + df["raw_id"].astype(str)
 
-    return df
+    return df, issues
 
-async def load_transformed_data(df, db: AsyncSession):
+async def load_transformed_data(df, issues, db: AsyncSession):
     
     processed_raw_ids = df["raw_id"].tolist()
 
-    clean_df = df[df["issue_type"].isna()]
-    error_df = df[df["issue_type"].notna()]
+    blocking_types = {"invalid_amount", "invalid_currency"}
+    blocked_raw_ids = {issue["raw_id"] for issue in issues if issue["issue_type"] in blocking_types}
+
+    clean_df = df[~df["raw_id"].isin(blocked_raw_ids)]
 
     clean_records = []
     for _, row in clean_df.iterrows():
@@ -70,15 +91,14 @@ async def load_transformed_data(df, db: AsyncSession):
         )
         clean_records.append(clean_record)
 
-    error_records = []
-    for _, row in error_df.iterrows():
-        error_record = DataQualityIssue(
-            raw_id = row["raw_id"],
-            issue_type = row["issue_type"],
-            detail = row["issue_detail"],
+    error_records = [
+        DataQualityIssue(
+            raw_id = issue["raw_id"],
+            issue_type = issue["issue_type"],
+            detail = issue["detail"],
         )
-
-        error_records.append(error_record)
+        for issue in issues
+    ]
 
     db.add_all(clean_records)
     db.add_all(error_records)
@@ -93,5 +113,18 @@ async def load_transformed_data(df, db: AsyncSession):
 
     return len(clean_records), len(error_records)
 
+async def run_etl_pipeline(db: AsyncSession):
+    df = await extract_raw_transactions(db)
+    if df is None:
+        return{"message": "No new transactions to process"}
 
+    df, issues_amount = validate_amount(df)
+    df, issues_currency  = validate_currency(df)
+    df, issues_ref  = validate_external_ref(df)
+
+    issues = issues_amount + issues_currency + issues_ref
+
+    clean_count, error_count = await load_transformed_data(df, issues, db)
+
+    return {"clean_count": clean_count, "error_count": error_count}
 
