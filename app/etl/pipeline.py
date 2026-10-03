@@ -70,11 +70,27 @@ def validate_external_ref(df):
 
     return df, issues
 
+def validate_timestamp(df):
+    df["timestamp"] = pd.to_datetime(df["timestamp"], errors="coerce", utc=True)
+
+    invalid_timestamp_mask = df["timestamp"].isna()
+    invalid_rows = df[invalid_timestamp_mask]
+
+    issues = []
+    for _, row in invalid_rows.iterrows():
+        issues.append({
+            "raw_id": row["raw_id"],
+            "issue_type": "invalid_timestamp",
+            "detail": "Timestamp is missing or invalid",
+        })
+
+    return df, issues
+
 async def load_transformed_data(df, issues, db: AsyncSession):
     
     processed_raw_ids = df["raw_id"].tolist()
 
-    blocking_types = {"invalid_amount", "invalid_currency"}
+    blocking_types = {"invalid_amount", "invalid_currency", "invalid_timestamp"}
     blocked_raw_ids = {issue["raw_id"] for issue in issues if issue["issue_type"] in blocking_types}
 
     clean_df = df[~df["raw_id"].isin(blocked_raw_ids)]
@@ -88,6 +104,7 @@ async def load_transformed_data(df, issues, db: AsyncSession):
             transaction_date = row["timestamp"],
             source_id  = row["source_id"],
             quality_flag = "ok",
+            status = row.get("status") if pd.notna(row.get("status")) else "unknown",
         )
         clean_records.append(clean_record)
 
@@ -121,8 +138,9 @@ async def run_etl_pipeline(db: AsyncSession):
     df, issues_amount = validate_amount(df)
     df, issues_currency  = validate_currency(df)
     df, issues_ref  = validate_external_ref(df)
+    df, issues_timestamp = validate_timestamp(df)
 
-    issues = issues_amount + issues_currency + issues_ref
+    issues = issues_amount + issues_currency + issues_ref + issues_timestamp
 
     clean_count, error_count = await load_transformed_data(df, issues, db)
 
