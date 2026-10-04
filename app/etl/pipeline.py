@@ -37,7 +37,7 @@ def validate_amount(df):
         issues.append({
             "raw_id": row["raw_id"],
             "issue_type": "invalid_amount",
-            "detail": "Amount is missing, zero, or negaive",
+            "detail": "Amount is missing, zero, or negative",
         })
 
     return df, issues
