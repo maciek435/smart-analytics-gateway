@@ -20,6 +20,10 @@ async def extract_raw_transactions(db: AsyncSession):
     df["raw_id"] = [record.id for record in raw_records]
     df["source_id"] = [record.source_id for record in raw_records]
 
+    for col in ["amount", "currency", "external_ref", "timestamp", "status"]:
+        if col not in df.columns:
+            df[col] = None
+
     return df
 
 def validate_amount(df):
@@ -33,7 +37,7 @@ def validate_amount(df):
         issues.append({
             "raw_id": row["raw_id"],
             "issue_type": "invalid_amount",
-            "detail": "Amount is missing, zero, or negaive",
+            "detail": "Amount is missing, zero, or negative",
         })
 
     return df, issues
@@ -103,6 +107,7 @@ async def load_transformed_data(df, issues, db: AsyncSession):
             currency = row["currency"],
             transaction_date = row["timestamp"],
             source_id  = row["source_id"],
+            external_ref = row["external_ref"],
             quality_flag = "ok",
             status = row.get("status") if pd.notna(row.get("status")) else "unknown",
         )
