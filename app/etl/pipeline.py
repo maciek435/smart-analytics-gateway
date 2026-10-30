@@ -138,7 +138,7 @@ async def load_transformed_data(df, issues, db: AsyncSession):
 async def run_etl_pipeline(db: AsyncSession):
     df = await extract_raw_transactions(db)
     if df is None:
-        return{"message": "No new transactions to process"}
+        return {"clean_count": 0, "error_count": 0}
 
     df, issues_amount = validate_amount(df)
     df, issues_currency  = validate_currency(df)
