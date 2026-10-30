@@ -5,6 +5,8 @@ from sqlalchemy import func, select
 from app.db import get_db
 from app.models.transactions import CleanTransaction
 from app.schemas.analytics import AnalyticsSummary
+from app.models.quality import DataQualityIssue
+from app.models.transactions import RawTransaction
 
 router = APIRouter(prefix="/api/v1/analytics", tags=["analytics"])
 
@@ -24,8 +26,19 @@ async def analytics_summary(source_id: int | None = None, db:AsyncSession = Depe
     rows = (await db.execute(stmt)).all()
     volume_by_currency = dict(rows)
 
+    stmt = select(func.count(func.distinct(DataQualityIssue.raw_id))).where(DataQualityIssue.issue_type.in_(["invalid_amount", "invalid_currency", "invalid_timestamp"]))
+    if source_id is not None:
+        stmt = stmt.join(RawTransaction, DataQualityIssue.raw_id == RawTransaction.id).where(RawTransaction.source_id == source_id)
+    error = (await db.execute(stmt)).scalar_one()
+
+    if total == 0 and error == 0:
+        result = 0.0
+    else:
+        result = round(total / (total + error) * 100, 2)
+
+
     return AnalyticsSummary(
         total_transactions=total,
         total_volume_by_currency=volume_by_currency,
-        data_quality_score=0.0
+        data_quality_score=result
     )
