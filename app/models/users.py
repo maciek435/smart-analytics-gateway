@@ -7,7 +7,7 @@ from app.db import Base
 class User(Base):
     __tablename__="users"
     id: Mapped[int] = mapped_column(primary_key=True)
-    login: Mapped[str] = mapped_column(unique=True, nullable=False)
+    email: Mapped[str] = mapped_column(unique=True, nullable=False)
     password_hash: Mapped[str] = mapped_column(nullable=False)
     role: Mapped[str] = mapped_column(String, nullable=False)
     source_id: Mapped[int | None] = mapped_column(ForeignKey("sources.id"), nullable=True)

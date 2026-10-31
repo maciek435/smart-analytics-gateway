@@ -11,3 +11,4 @@ python-dotenv==1.0.1
 psycopg[binary]==3.2.3
 bcrypt==5.0.0
 pyjwt==2.15.1
+python-multipart==0.0.33
