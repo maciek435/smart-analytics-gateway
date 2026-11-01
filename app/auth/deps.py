@@ -30,3 +30,9 @@ async def get_current_user(token: Annotated[str, Depends(oauth2_scheme)], db: As
         raise HTTPException(status_code=403, detail="Access denied")
 
     return user
+
+async def require_admin(user:  User = Depends(get_current_user)):
+    role = user.role
+    if role != "admin":
+        raise HTTPException(status_code=403, detail="Access denied")
+    return user

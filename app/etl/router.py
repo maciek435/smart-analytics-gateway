@@ -1,13 +1,14 @@
 from fastapi import APIRouter, Depends
 from sqlalchemy.ext.asyncio import AsyncSession
 
+from app.auth.deps import require_admin
 from app.db import get_db
 from app.etl.pipeline import run_etl_pipeline
 from app.schemas.etl import ETLRunResponse
 
 router = APIRouter(prefix="/api/v1/etl", tags=["etl"])
 
-@router.post("/run", response_model=ETLRunResponse)
+@router.post("/run", response_model=ETLRunResponse, dependencies=[Depends(require_admin)])
 async def trigger_etl(db:AsyncSession = Depends(get_db)):
     result = await run_etl_pipeline(db)
     response = ETLRunResponse(
