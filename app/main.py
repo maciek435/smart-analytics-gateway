@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from app.ingestion.router import router as ingestion_router
 from app.etl.router import router as etl_router
 from app.serving.router import router as serving_router
+from app.auth.router import router as auth_router
 
 
 app = FastAPI(
@@ -13,6 +14,7 @@ app = FastAPI(
 app.include_router(ingestion_router)
 app.include_router(etl_router)
 app.include_router(serving_router)
+app.include_router(auth_router)
 
 @app.get("/health")
 def health_check():
