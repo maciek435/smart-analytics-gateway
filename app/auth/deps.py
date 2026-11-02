@@ -36,3 +36,13 @@ async def require_admin(user:  User = Depends(get_current_user)):
     if role != "admin":
         raise HTTPException(status_code=403, detail="Access denied")
     return user
+
+def resolve_source_id(current_user: User, requested_source_id: int | None):
+    if current_user.role == "admin":
+        return requested_source_id
+    if current_user.source_id is None:
+        raise HTTPException(status_code=403, detail="Configuration error")
+    if requested_source_id is not None and current_user.source_id != requested_source_id:
+        raise HTTPException(status_code=403, detail="Request forbieden")
+    
+    return current_user.source_id
