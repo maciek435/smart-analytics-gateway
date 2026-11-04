@@ -2,6 +2,7 @@ from fastapi import APIRouter, Depends
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import func, select
 
+from app.api.filters import source_id_filter
 from app.db import get_db
 from app.models.transactions import CleanTransaction
 from app.models.users import User
@@ -11,11 +12,6 @@ from app.models.transactions import RawTransaction
 from app.auth.deps import resolve_source_id, get_current_user
 
 router = APIRouter(prefix="/api/v1/analytics", tags=["analytics"])
-
-def source_id_filter(stmt, source_id):
-    if source_id is not None:
-        stmt = stmt.where(CleanTransaction.source_id == source_id)     
-    return stmt
 
 @router.get("/summary", response_model=AnalyticsSummary)
 async def analytics_summary(current_user: User = Depends(get_current_user), source_id: int | None = None, db:AsyncSession = Depends(get_db)):
