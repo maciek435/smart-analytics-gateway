@@ -6,6 +6,7 @@ from app.auth.router import router as auth_router
 from app.users.router import router as users_router
 from app.transactions.router import router as transactions_router
 from app.quality.router import router as quality_router
+from app.sources.router import router as sources_router
 
 app = FastAPI(
     title="Smart Analytics & API Gateway",
@@ -20,6 +21,7 @@ app.include_router(auth_router)
 app.include_router(users_router)
 app.include_router(transactions_router)
 app.include_router(quality_router)
+app.include_router(sources_router)
 
 @app.get("/health")
 def health_check():
