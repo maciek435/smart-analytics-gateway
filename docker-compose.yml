@@ -5,14 +5,14 @@ services:
       context: .
       dockerfile: docker/Dockerfile
     container_name: sag_api
-    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
-    volumes:
-      - ./app:/code/app
+    restart: unless-stopped
     ports:
-      - "8000:8000"
+      - "127.0.0.1:8000:8000"
     environment:
-      - DATABASE_URL=postgresql+asyncpg://sag_user:sag_password@db:5432/sag_db
-      - JWT_SECRET_KEY=${JWT_SECRET_KEY}
+      - DATABASE_URL=postgresql+asyncpg://${POSTGRES_USER}:${POSTGRES_PASSWORD:?Uzupelnij POSTGRES_PASSWORD w pliku .env}@db:5432/${POSTGRES_DB}
+      - JWT_SECRET_KEY=${JWT_SECRET_KEY:?Uzupelnij JWT_SECRET_KEY w pliku .env}
+      - ADMIN_EMAIL=${ADMIN_EMAIL:-}
+      - ADMIN_PASSWORD=${ADMIN_PASSWORD:-}
     depends_on:
       db:
         condition: service_healthy
@@ -20,19 +20,32 @@ services:
   db:
     image: postgres:15
     container_name: sag_db
+    restart: unless-stopped
     environment:
-      - POSTGRES_USER=sag_user
-      - POSTGRES_PASSWORD=sag_password
-      - POSTGRES_DB=sag_db
-    ports:
-      - "5432:5432"
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=${POSTGRES_DB}
     volumes:
       - pg_data:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U sag_user -d sag_db"]
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
       interval: 5s
       timeout: 5s
       retries: 5
 
+  nodered:
+    image: nodered/node-red:4.0
+    container_name: sag_nodered
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:1880:1880"
+    environment:
+      - TZ=Europe/Warsaw
+    volumes:
+      - nodered_data:/data
+    depends_on:
+      - api
+
 volumes:
   pg_data:
+  nodered_data:
