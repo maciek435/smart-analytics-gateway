@@ -1,3 +1,4 @@
+import os
 import asyncio
 from getpass import getpass
 
@@ -34,6 +35,6 @@ async def create_admin(email:str, password:str):
 
 
 if __name__ == "__main__":
-    email = input("E-mail: ")
-    password = getpass("Hasło: ")
+    email = os.getenv("ADMIN_EMAIL") or input("E-mail: ")
+    password = os.getenv("ADMIN_PASSWORD") or getpass("Hasło: ")
     asyncio.run(create_admin(email, password))
