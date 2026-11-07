@@ -3,6 +3,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select, update
 from decimal import Decimal
 
+from app.etl.constants import BLOCKING_ISSUE_TYPES
 from app.models.transactions import CleanTransaction
 from app.models.quality import DataQualityIssue
 from app.models import RawTransaction
@@ -94,8 +95,8 @@ async def load_transformed_data(df, issues, db: AsyncSession):
     
     processed_raw_ids = df["raw_id"].tolist()
 
-    blocking_types = {"invalid_amount", "invalid_currency", "invalid_timestamp"}
-    blocked_raw_ids = {issue["raw_id"] for issue in issues if issue["issue_type"] in blocking_types}
+    
+    blocked_raw_ids = {issue["raw_id"] for issue in issues if issue["issue_type"] in BLOCKING_ISSUE_TYPES}
 
     clean_df = df[~df["raw_id"].isin(blocked_raw_ids)]
 
