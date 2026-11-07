@@ -1,0 +1,1 @@
+BLOCKING_ISSUE_TYPES = ["invalid_amount", "invalid_currency", "invalid_timestamp"]
