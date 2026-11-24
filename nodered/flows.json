@@ -1,0 +1,2534 @@
+[
+    {
+        "id": "f6f2187d.f17ca8",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "7d54ae115f94ca5c",
+        "type": "tab",
+        "label": "Przeglądarka transakcji",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "c9e790c3484907f0",
+        "type": "tab",
+        "label": "Waluty",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "5a5b0669479cd4b8",
+        "type": "tab",
+        "label": "Admin",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "sag_ui_base_1",
+        "type": "ui-base",
+        "name": "Smart Analytics Gateway",
+        "path": "/dashboard",
+        "appIcon": "",
+        "includeClientData": true,
+        "acceptsClientConfig": [
+            "ui-notification",
+            "ui-control"
+        ],
+        "showPathInSidebar": false,
+        "headerContent": "page",
+        "navigationStyle": "default",
+        "titleBarStyle": "default",
+        "showReconnectNotification": true,
+        "notificationDisplayTime": 3,
+        "showDisconnectNotification": true
+    },
+    {
+        "id": "sag_ui_theme_1",
+        "type": "ui-theme",
+        "name": "Analytics Theme",
+        "colors": {
+            "surface": "#ffffff",
+            "primary": "#0d74ce",
+            "bgPage": "#f4f6f9",
+            "groupBg": "#ffffff",
+            "groupOutline": "#dce1e7"
+        },
+        "sizes": {
+            "density": "default",
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "8px",
+            "widgetGap": "10px"
+        }
+    },
+    {
+        "id": "sag_page_analytics",
+        "type": "ui-page",
+        "name": "KPI i logowanie",
+        "ui": "sag_ui_base_1",
+        "path": "/analityka",
+        "icon": "chart-line",
+        "layout": "grid",
+        "theme": "sag_ui_theme_1",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "tabs": [],
+        "order": 1,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "sag_grp_filters",
+        "type": "ui-group",
+        "name": "Wskaźniki Globalne",
+        "page": "sag_page_analytics",
+        "width": "6",
+        "height": "1",
+        "order": 1,
+        "showTitle": true,
+        "className": "nrdb-ui-group",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default",
+        "keepLoaded": false,
+        "tab": ""
+    },
+    {
+        "id": "5ef058cce83c4ec4",
+        "type": "ui-page",
+        "name": "Transakcje zaakcpetowane",
+        "ui": "sag_ui_base_1",
+        "path": "/page2",
+        "icon": "check-circle",
+        "layout": "grid",
+        "theme": "sag_ui_theme_1",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "tabs": [],
+        "order": 2,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "5340ce0cc49bddd7",
+        "type": "ui-group",
+        "name": "Group 2",
+        "page": "5ef058cce83c4ec4",
+        "width": 6,
+        "height": 1,
+        "order": 2,
+        "showTitle": false,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default",
+        "keepLoaded": false,
+        "tab": ""
+    },
+    {
+        "id": "6ff6821859812b63",
+        "type": "ui-group",
+        "name": "Group 3",
+        "page": "5ef058cce83c4ec4",
+        "width": 6,
+        "height": 1,
+        "order": 1,
+        "showTitle": false,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default",
+        "keepLoaded": false,
+        "tab": ""
+    },
+    {
+        "id": "e2043b3127090c64",
+        "type": "ui-page",
+        "name": "Transakcje odrzucone",
+        "ui": "sag_ui_base_1",
+        "path": "/page3",
+        "icon": "close-circle",
+        "layout": "grid",
+        "theme": "sag_ui_theme_1",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "tabs": [],
+        "order": 3,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "d9226485885f8af1",
+        "type": "ui-group",
+        "name": "Group 4",
+        "page": "e2043b3127090c64",
+        "width": 6,
+        "height": 1,
+        "order": 1,
+        "showTitle": false,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default",
+        "keepLoaded": false,
+        "tab": ""
+    },
+    {
+        "id": "361c5c781142a986",
+        "type": "ui-group",
+        "name": "Group 5",
+        "page": "e2043b3127090c64",
+        "width": 6,
+        "height": 1,
+        "order": 2,
+        "showTitle": false,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default",
+        "keepLoaded": false,
+        "tab": ""
+    },
+    {
+        "id": "ae1982627faeb0a2",
+        "type": "ui-group",
+        "name": "Status Systemu ",
+        "page": "sag_page_analytics",
+        "width": 6,
+        "height": 1,
+        "order": 2,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default",
+        "keepLoaded": false,
+        "tab": ""
+    },
+    {
+        "id": "42896b55235cf990",
+        "type": "ui-page",
+        "name": "Panel administratora",
+        "ui": "sag_ui_base_1",
+        "path": "/page4",
+        "icon": "shield-account",
+        "layout": "grid",
+        "theme": "sag_ui_theme_1",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "tabs": [],
+        "order": 4,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "31ee8d94a17a9fe8",
+        "type": "ui-group",
+        "name": "Zarządzanie firmami",
+        "page": "42896b55235cf990",
+        "width": 6,
+        "height": 1,
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default",
+        "keepLoaded": false,
+        "tab": ""
+    },
+    {
+        "id": "28b17724203cf2f9",
+        "type": "ui-group",
+        "name": "Zarządzanie użytkownikami",
+        "page": "42896b55235cf990",
+        "width": 6,
+        "height": 1,
+        "order": 2,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default",
+        "keepLoaded": false,
+        "tab": ""
+    },
+    {
+        "id": "d5b1879bf3655fc1",
+        "type": "ui-page",
+        "name": "Zarządzanie transakcjami",
+        "ui": "sag_ui_base_1",
+        "path": "/page5",
+        "icon": "swap-horizontal",
+        "layout": "grid",
+        "theme": "sag_ui_theme_1",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "tabs": [],
+        "order": 5,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "a299396bd5c03814",
+        "type": "ui-group",
+        "name": "Wysyłanie transakcji",
+        "page": "d5b1879bf3655fc1",
+        "width": 6,
+        "height": 1,
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default",
+        "keepLoaded": false,
+        "tab": ""
+    },
+    {
+        "id": "bad36536d6191c68",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "function 1",
+        "func": "const email = encodeURIComponent(msg.payload.email.trim());\nconst pass = encodeURIComponent(msg.payload.password);\n\nmsg.headers = { \"Content-Type\": \"application/x-www-form-urlencoded\" };\nmsg.payload = `username=${email}&password=${pass}`;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 160,
+        "wires": [
+            [
+                "54b3a18e1694def5"
+            ]
+        ]
+    },
+    {
+        "id": "54b3a18e1694def5",
+        "type": "http request",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "http://api:8000/api/v1/auth/login",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 570,
+        "y": 160,
+        "wires": [
+            [
+                "68a33dd8f0093f67"
+            ]
+        ]
+    },
+    {
+        "id": "68a33dd8f0093f67",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "function 2",
+        "func": "if (msg.statusCode === 200 && msg.payload.access_token) {\n    global.set(\"token\", msg.payload.access_token);\n    msg.payload = \"✅ Zalogowano pomyślnie!\";\n} else {\n    msg.payload = \"❌ Błędny e-mail lub hasło!\";\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 800,
+        "y": 160,
+        "wires": [
+            [
+                "991b1d660d2c95db",
+                "4b2426fe48ecfcff",
+                "58d4189de425aaa0"
+            ]
+        ]
+    },
+    {
+        "id": "a1dbd307645de876",
+        "type": "http request",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "http://api:8000/api/v1/analytics/summary",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 570,
+        "y": 280,
+        "wires": [
+            [
+                "17b2c538eca62f4f"
+            ]
+        ]
+    },
+    {
+        "id": "6705266fc62cd576",
+        "type": "comment",
+        "z": "f6f2187d.f17ca8",
+        "name": "pobieranie tokena",
+        "info": "",
+        "x": 470,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "991b1d660d2c95db",
+        "type": "debug",
+        "z": "f6f2187d.f17ca8",
+        "name": "debug 1",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1000,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "17b2c538eca62f4f",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "function 4",
+        "func": "const d = msg.payload;\n\nconst msgTotal = { payload: d.total_transactions };\n\nconst msgQuality = { payload: d.data_quality_score };\n\nconst vols = d.total_volume_by_currency || {};\nconst chartData = Object.entries(vols).map(([waluta, kwota]) => ({\n    x: waluta,\n    y: kwota\n}));\nconst msgChart = { payload: chartData };\n\nreturn [msgTotal, msgQuality, msgChart];",
+        "outputs": 3,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 780,
+        "y": 280,
+        "wires": [
+            [
+                "d7f214624584d50f",
+                "4a9c27263c7d1b49"
+            ],
+            [
+                "5225eee84b5f57bc"
+            ],
+            [
+                "8f33acfcff480543"
+            ]
+        ]
+    },
+    {
+        "id": "d7f214624584d50f",
+        "type": "debug",
+        "z": "f6f2187d.f17ca8",
+        "name": "debug 2",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1000,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "4a9c27263c7d1b49",
+        "type": "ui-text",
+        "z": "f6f2187d.f17ca8",
+        "group": "sag_grp_filters",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "LIczba transakcji:",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#717171",
+        "wrapText": false,
+        "className": "sag-kpi",
+        "value": "payload",
+        "valueType": "msg",
+        "x": 1030,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "5225eee84b5f57bc",
+        "type": "ui-gauge",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "group": "sag_grp_filters",
+        "order": 1,
+        "value": "payload",
+        "valueType": "msg",
+        "width": 6,
+        "height": 3,
+        "gtype": "gauge-half",
+        "gstyle": "needle",
+        "title": "Jakość danych",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "%",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#5cd65c",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "60",
+                "color": "#ffc800",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "80",
+                "color": "#ea5353",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": 0,
+        "max": "100",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 1020,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8f33acfcff480543",
+        "type": "ui-chart",
+        "z": "f6f2187d.f17ca8",
+        "group": "sag_grp_filters",
+        "name": "",
+        "label": "Wykres słupkowy walut",
+        "order": 3,
+        "chartType": "bar",
+        "category": "",
+        "categoryType": "none",
+        "xAxisLabel": "",
+        "xAxisProperty": "x",
+        "xAxisPropertyType": "property",
+        "xAxisType": "category",
+        "xAxisFormat": "",
+        "xAxisFormatType": "auto",
+        "xmin": "",
+        "xmax": "",
+        "yAxisLabel": "",
+        "yAxisProperty": "y",
+        "yAxisPropertyType": "property",
+        "ymin": "",
+        "ymax": "",
+        "bins": 10,
+        "action": "replace",
+        "stackSeries": false,
+        "pointShape": "circle",
+        "pointRadius": 4,
+        "showLegend": true,
+        "removeOlder": 1,
+        "removeOlderUnit": "3600",
+        "removeOlderPoints": "",
+        "colors": [
+            "#0095ff",
+            "#ff0000",
+            "#ff7f0e",
+            "#2ca02c",
+            "#a347e1",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "textColor": [
+            "#666666"
+        ],
+        "textColorDefault": true,
+        "gridColor": [
+            "#e5e5e5"
+        ],
+        "gridColorDefault": true,
+        "width": 6,
+        "height": "6",
+        "className": "",
+        "interpolation": "linear",
+        "x": 1030,
+        "y": 380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "58d4189de425aaa0",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "function 3",
+        "func": "const token = global.get(\"token\");\n\nif (!token) {\n    return [null, {\n        payload: {\n            pages: {\n                hide: [\n                    \"Transakcje zaakcpetowane\",\n                    \"Transakcje odrzucone\",\n                    \"Panel administratora\",\n                    \"Zarządzanie transakcjami\"\n                ]\n            },\n            groups: {\n                hide: [\"Wskaźniki Globalne\"]\n            }\n        }\n    }];\n}\n\nmsg.headers = { \"Authorization\": \"Bearer \" + token };\nreturn [msg, null];",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 280,
+        "wires": [
+            [
+                "a1dbd307645de876",
+                "f8393a1cab57f2ab",
+                "dc7f3710de91df80"
+            ],
+            [
+                "d3c93e18e61e7a73"
+            ]
+        ]
+    },
+    {
+        "id": "1f4cd7035537d88f",
+        "type": "inject",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "4",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 150,
+        "y": 280,
+        "wires": [
+            [
+                "58d4189de425aaa0"
+            ]
+        ]
+    },
+    {
+        "id": "f8393a1cab57f2ab",
+        "type": "http request",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "http://api:8000/health",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 670,
+        "y": 480,
+        "wires": [
+            [
+                "be7afa8e144f7e03",
+                "e37d3f932ecfa4f6"
+            ]
+        ]
+    },
+    {
+        "id": "be7afa8e144f7e03",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "function 10",
+        "func": "if (msg.statusCode === 200 && msg.payload.status === \"ok\") {\n    msg.payload = \"🟢 Online (\" + msg.payload.message + \")\";\n} else {\n    msg.payload = \"🔴 Offline (błąd połączenia)\";\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 880,
+        "y": 480,
+        "wires": [
+            [
+                "b8d3b87d404f0d80"
+            ]
+        ]
+    },
+    {
+        "id": "e37d3f932ecfa4f6",
+        "type": "debug",
+        "z": "f6f2187d.f17ca8",
+        "name": "debug 6",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 840,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "b8d3b87d404f0d80",
+        "type": "ui-text",
+        "z": "f6f2187d.f17ca8",
+        "group": "ae1982627faeb0a2",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Status serwera:",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#717171",
+        "wrapText": false,
+        "className": "\tsag-wiersz sag-zielony",
+        "value": "payload",
+        "valueType": "msg",
+        "x": 1060,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "dc7f3710de91df80",
+        "type": "http request",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "http://api:8000/api/v1/auth/me",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 670,
+        "y": 540,
+        "wires": [
+            [
+                "7e4e038dd7deda2a",
+                "492a6c853144ab72"
+            ]
+        ]
+    },
+    {
+        "id": "7e4e038dd7deda2a",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "function 11",
+        "func": "const u = msg.payload;\nconst rolaPL = u.role === \"admin\" ? \"Administrator\" : \"Klient\";\nconst zrodlo = u.source_id ? (\"Źródło ID: \" + u.source_id) : \"Wszystkie źródła\";\n\nmsg.payload = `${u.email} | Rola: ${rolaPL} | ${zrodlo}`;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 880,
+        "y": 540,
+        "wires": [
+            [
+                "663a60e294b1b124"
+            ]
+        ]
+    },
+    {
+        "id": "663a60e294b1b124",
+        "type": "ui-text",
+        "z": "f6f2187d.f17ca8",
+        "group": "ae1982627faeb0a2",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Aktywne konto:",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#717171",
+        "wrapText": false,
+        "className": "sag-wiersz",
+        "value": "payload",
+        "valueType": "msg",
+        "x": 1080,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "0bb3ed1c4c2f87eb",
+        "type": "ui-form",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "group": "ae1982627faeb0a2",
+        "label": "Logowanie do systemu",
+        "order": 1,
+        "width": "6",
+        "height": "5",
+        "options": [
+            {
+                "label": "Adres e-mail",
+                "key": "email",
+                "type": "text",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "Hasło",
+                "key": "password",
+                "type": "password",
+                "required": true,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "email": "",
+            "password": ""
+        },
+        "payload": "",
+        "submit": "Zaloguj",
+        "cancel": "Wyczyść",
+        "resetOnSubmit": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "splitLayout": "",
+        "className": "",
+        "passthru": false,
+        "dropdownOptions": [],
+        "x": 140,
+        "y": 160,
+        "wires": [
+            [
+                "bad36536d6191c68"
+            ]
+        ]
+    },
+    {
+        "id": "4b2426fe48ecfcff",
+        "type": "ui-notification",
+        "z": "f6f2187d.f17ca8",
+        "ui": "sag_ui_base_1",
+        "position": "center center",
+        "colorDefault": true,
+        "color": "#000000",
+        "displayTime": "3",
+        "showCountdown": true,
+        "outputs": 1,
+        "allowDismiss": true,
+        "dismissText": "Close",
+        "allowConfirm": false,
+        "confirmText": "Confirm",
+        "raw": false,
+        "className": "",
+        "name": "",
+        "x": 1290,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e7428a6894219542",
+        "type": "ui-button",
+        "z": "f6f2187d.f17ca8",
+        "group": "ae1982627faeb0a2",
+        "name": "",
+        "label": "Wyloguj się",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "sag-wylog",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "red",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 930,
+        "y": 720,
+        "wires": [
+            [
+                "78f6053f3fd39111"
+            ]
+        ]
+    },
+    {
+        "id": "78f6053f3fd39111",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "function 27",
+        "func": "global.set(\"token\", null);\n\nreturn [\n    { payload: \"🔒 Wylogowano z systemu\" },\n    { payload: \"Brak (niezalogowany)\" },\n    {\n        payload: {\n            pages: {\n                hide: [\n                    \"Transakcje zaakcpetowane\",\n                    \"Transakcje odrzucone\",\n                    \"Panel administratora\",\n                    \"Zarządzanie transakcjami\"\n                ]\n            },\n            groups: {\n                hide: [\"Wskaźniki Globalne\"]\n            }\n        }\n    }\n];",
+        "outputs": 3,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1170,
+        "y": 720,
+        "wires": [
+            [
+                "4b2426fe48ecfcff"
+            ],
+            [
+                "663a60e294b1b124"
+            ],
+            [
+                "d3c93e18e61e7a73"
+            ]
+        ]
+    },
+    {
+        "id": "492a6c853144ab72",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "function 28",
+        "func": "const stronyKlienta = [\"Transakcje zaakcpetowane\", \"Transakcje odrzucone\"];\nconst stronyAdmina = [\"Panel administratora\", \"Zarządzanie transakcjami\"];\n\nif (msg.statusCode === 200 && msg.payload.role === \"admin\") {\n    msg.payload = {\n        pages: { show: [...stronyKlienta, ...stronyAdmina] },\n        groups: { show: [\"Wskaźniki Globalne\"] }\n    };\n} else if (msg.statusCode === 200) {\n    msg.payload = {\n        pages: { show: stronyKlienta, hide: stronyAdmina },\n        groups: { show: [\"Wskaźniki Globalne\"] }\n    };\n} else {\n    msg.payload = {\n        pages: { hide: [...stronyKlienta, ...stronyAdmina] },\n        groups: { hide: [\"Wskaźniki Globalne\"] }\n    };\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 430,
+        "y": 640,
+        "wires": [
+            [
+                "d3c93e18e61e7a73"
+            ]
+        ]
+    },
+    {
+        "id": "d3c93e18e61e7a73",
+        "type": "ui-control",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "ui": "sag_ui_base_1",
+        "events": "none",
+        "outputs": 0,
+        "inputMode": "payload",
+        "actions": [],
+        "x": 640,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "c11ed2bb4a04c0d6",
+        "type": "ui-template",
+        "z": "f6f2187d.f17ca8",
+        "group": "",
+        "page": "",
+        "ui": "sag_ui_base_1",
+        "name": "",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": "/* ===== Karty (grupy): wypełnij całą wysokość komórki ===== */\n.nrdb-ui-group {\n    height: 100%;\n    box-shadow: none !important;\n    background: transparent !important;\n}\n.nrdb-ui-group > .v-card,\n.nrdb-ui-group.v-card {\n    height: 100%;\n    border-radius: 14px !important;\n    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08) !important;\n}\n\n/* ===== Wiersze tekstowe (Status serwera, Aktywne konto, ...) ===== */\n.sag-wiersz {\n    background: #f5f7fb;\n    border-left: 4px solid #1976d2;\n    border-radius: 8px;\n    padding: 10px 14px;\n    margin: 4px 0;\n}\n\n.sag-wiersz .nrdb-ui-text-label {\n    color: #6b7280;\n    font-size: 0.85rem;\n    text-transform: uppercase;\n    letter-spacing: 0.04em;\n}\n\n.sag-wiersz .nrdb-ui-text-value {\n    color: #111827;\n    font-size: 1.05rem;\n}\n\n/* ===== Duży licznik (Liczba transakcji) ===== */\n.sag-kpi {\n    background: linear-gradient(135deg, #1976d2, #42a5f5);\n    border-radius: 12px;\n    padding: 14px 18px;\n    color: #fff;\n}\n\n.sag-kpi .nrdb-ui-text-label {\n    color: rgba(255, 255, 255, 0.85);\n}\n\n.sag-kpi .nrdb-ui-text-value {\n    color: #fff;\n    font-size: 2rem;\n}\n\n/* ===== Warianty kolorów ===== */\n.sag-zielony {\n    border-left-color: #2e7d32;\n}\n\n.sag-czerwony {\n    border-left-color: #c62828;\n}\n\n/* ===== Tabele ===== */\n.nrdb-ui-table th {\n    background: #eef2f7 !important;\n    font-weight: 700 !important;\n}\n\n.nrdb-ui-table tbody tr:hover {\n    background: #f1f8ff !important;\n}\n\n/* ===== Przyciski ===== */\n.v-btn {\n    border-radius: 8px !important;\n    text-transform: none !important;\n    letter-spacing: 0 !important;\n}",
+        "noerr": 0,
+        "storeOutMessages": true,
+        "passthru": true,
+        "resendOnRefresh": true,
+        "templateScope": "site:style",
+        "className": "",
+        "x": 1300,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f138141ebf244534",
+        "type": "function",
+        "z": "7d54ae115f94ca5c",
+        "name": "function 6",
+        "func": "const statusyPL = {\n    \"completed\": \"Zakończona\",\n    \"pending\": \"Oczekująca\",\n    \"paid\": \"Opłacona\",\n    \"failed\": \"Błędna\",\n    \"unknown\": \"Nieznany\"\n};\nmsg.payload = msg.payload.items.map(t => ({\n    \"ID\": t.id,\n    \"ID Surowe\": t.raw_id,\n    \"Numer referencyjny\": t.external_ref,\n    \"Kwota\": t.amount,\n    \"Waluta\": t.currency,\n    \"Data transakcji\": t.transaction_date.replace(\"T\", \" \").slice(0, 19),\n    \"Status\": statusyPL[t.status] || t.status,\n    \"ID Źródła\": t.source_id,\n    \"Jakość\": t.quality_flag\n}));\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 840,
+        "y": 180,
+        "wires": [
+            [
+                "4523025df3af8bdf",
+                "5b7c25d7a34be90d"
+            ]
+        ]
+    },
+    {
+        "id": "ffcd474562fcb636",
+        "type": "http request",
+        "z": "7d54ae115f94ca5c",
+        "name": "",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "http://api:8000/api/v1/transactions",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 630,
+        "y": 180,
+        "wires": [
+            [
+                "901172fc87b71b78",
+                "f138141ebf244534"
+            ]
+        ]
+    },
+    {
+        "id": "1180f3074397871e",
+        "type": "inject",
+        "z": "7d54ae115f94ca5c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "3",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 250,
+        "y": 180,
+        "wires": [
+            [
+                "09bd6be7b67b1a97"
+            ]
+        ]
+    },
+    {
+        "id": "09bd6be7b67b1a97",
+        "type": "function",
+        "z": "7d54ae115f94ca5c",
+        "name": "function 7",
+        "func": "const token = global.get(\"token\");\nif (!token) return null; \nmsg.headers = { \"Authorization\": \"Bearer \" + token };\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 440,
+        "y": 180,
+        "wires": [
+            [
+                "ffcd474562fcb636",
+                "149124fb6614cc4a"
+            ]
+        ]
+    },
+    {
+        "id": "901172fc87b71b78",
+        "type": "debug",
+        "z": "7d54ae115f94ca5c",
+        "name": "debug 3",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 820,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "4523025df3af8bdf",
+        "type": "debug",
+        "z": "7d54ae115f94ca5c",
+        "name": "debug 4",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 980,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "5b7c25d7a34be90d",
+        "type": "ui-table",
+        "z": "7d54ae115f94ca5c",
+        "group": "5340ce0cc49bddd7",
+        "name": "",
+        "label": "Tabela czystych transakcji",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "maxrows": 0,
+        "passthru": false,
+        "autocols": true,
+        "showSearch": true,
+        "deselect": true,
+        "selectionType": "none",
+        "columns": [],
+        "mobileBreakpoint": "sm",
+        "mobileBreakpointType": "defaults",
+        "action": "replace",
+        "className": "",
+        "x": 1270,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6cfd39339c97c650",
+        "type": "function",
+        "z": "7d54ae115f94ca5c",
+        "name": "function 5",
+        "func": "const bledyPL = {\n    \"invalid_amount\": \"Niepoprawna kwota\",\n    \"invalid_currency\": \"Błędna waluta\",\n    \"invalid_timestamp\": \"Błędna data\",\n    \"generated_external_ref\": \"Brak numeru referencyjnego\"\n};\n\n\nmsg.payload = msg.payload.items.map(r => ({\n    \"ID Surowe\": r.raw_id,\n    \"ID Źródła\": r.source_id,\n    \"Wykryte błędy\": r.issues.map(i => bledyPL[i.issue_type] || i.issue_type).join(\", \"),\n    \"Przesłana kwota\": r.payload.amount,\n    \"Przesłana waluta\": r.payload.currency,\n    \"Przesłana data\": r.payload.timestamp.replace(\"T\", \" \").slice(0, 19),\n    \"Odebrano\": r.received_at.replace(\"T\", \" \").slice(0, 19)\n}));\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 840,
+        "y": 280,
+        "wires": [
+            [
+                "771689bbdb9259d6",
+                "04b9951e3ff38257"
+            ]
+        ]
+    },
+    {
+        "id": "149124fb6614cc4a",
+        "type": "http request",
+        "z": "7d54ae115f94ca5c",
+        "name": "",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "http://api:8000/api/v1/rejected-transactions",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 650,
+        "y": 280,
+        "wires": [
+            [
+                "6cfd39339c97c650"
+            ]
+        ]
+    },
+    {
+        "id": "771689bbdb9259d6",
+        "type": "ui-table",
+        "z": "7d54ae115f94ca5c",
+        "group": "d9226485885f8af1",
+        "name": "",
+        "label": "Tabela odrzuconych transakcji",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "maxrows": 0,
+        "passthru": false,
+        "autocols": true,
+        "showSearch": true,
+        "deselect": true,
+        "selectionType": "none",
+        "columns": [],
+        "mobileBreakpoint": "sm",
+        "mobileBreakpointType": "defaults",
+        "action": "replace",
+        "className": "",
+        "x": 1230,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "04b9951e3ff38257",
+        "type": "debug",
+        "z": "7d54ae115f94ca5c",
+        "name": "debug 7",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1040,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "faaaf608c8551301",
+        "type": "function",
+        "z": "c9e790c3484907f0",
+        "name": "function 8",
+        "func": "const punktyWolumenu = msg.payload.points.map(p => ({\n    okres: p.period,\n    waluta: p.currency,\n    kwota: p.volume\n}));\n\n\nreturn [\n    [{ payload: [] }, { payload: punktyWolumenu }]\n]\n;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 860,
+        "y": 160,
+        "wires": [
+            [
+                "2616d60a784c174e"
+            ]
+        ]
+    },
+    {
+        "id": "d554c2606b4d4bfe",
+        "type": "http request",
+        "z": "c9e790c3484907f0",
+        "name": "",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 590,
+        "y": 160,
+        "wires": [
+            [
+                "faaaf608c8551301",
+                "9fd5c24938252746"
+            ]
+        ]
+    },
+    {
+        "id": "3ac19d9161131386",
+        "type": "inject",
+        "z": "c9e790c3484907f0",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "3",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 150,
+        "y": 160,
+        "wires": [
+            [
+                "4800aebf7831d34e",
+                "015dd513fcdf239a"
+            ]
+        ]
+    },
+    {
+        "id": "4800aebf7831d34e",
+        "type": "function",
+        "z": "c9e790c3484907f0",
+        "name": "function 9",
+        "func": "const token = global.get(\"token\");\nif (!token) return null;\nconst okres = global.get(\"okres\") || \"day\";\n\nmsg.headers = { \"Authorization\": \"Bearer \" + token };\nmsg.url = \"http://api:8000/api/v1/analytics/timeseries?group_by=\" + okres;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 160,
+        "wires": [
+            [
+                "d554c2606b4d4bfe"
+            ]
+        ]
+    },
+    {
+        "id": "2616d60a784c174e",
+        "type": "ui-chart",
+        "z": "c9e790c3484907f0",
+        "group": "6ff6821859812b63",
+        "name": "Wykres zaakceptowanych transakcji",
+        "label": "Wykres zaakceptowanych transakcji",
+        "order": 2,
+        "chartType": "line",
+        "category": "waluta",
+        "categoryType": "property",
+        "xAxisLabel": "Dzień",
+        "xAxisProperty": "okres",
+        "xAxisPropertyType": "property",
+        "xAxisType": "time",
+        "xAxisFormat": "",
+        "xAxisFormatType": "auto",
+        "xmin": "",
+        "xmax": "",
+        "yAxisLabel": "Kwota",
+        "yAxisProperty": "kwota",
+        "yAxisPropertyType": "property",
+        "ymin": "",
+        "ymax": "",
+        "bins": 10,
+        "action": "replace",
+        "stackSeries": false,
+        "pointShape": "circle",
+        "pointRadius": 4,
+        "showLegend": true,
+        "removeOlder": 1,
+        "removeOlderUnit": "3600",
+        "removeOlderPoints": "",
+        "colors": [
+            "#0095ff",
+            "#ff0000",
+            "#ff7f0e",
+            "#2ca02c",
+            "#a347e1",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "textColor": [
+            "#666666"
+        ],
+        "textColorDefault": true,
+        "gridColor": [
+            "#e5e5e5"
+        ],
+        "gridColorDefault": true,
+        "width": 6,
+        "height": "9",
+        "className": "",
+        "interpolation": "linear",
+        "x": 1150,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9fd5c24938252746",
+        "type": "debug",
+        "z": "c9e790c3484907f0",
+        "name": "debug 5",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1000,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "d93b1031acab4acf",
+        "type": "ui-dropdown",
+        "z": "c9e790c3484907f0",
+        "group": "6ff6821859812b63",
+        "name": "",
+        "label": "Grupuj wykres według:",
+        "tooltip": "",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "multiple": false,
+        "chips": false,
+        "clearable": false,
+        "options": [
+            {
+                "label": "Dzień",
+                "value": "day",
+                "type": "str"
+            },
+            {
+                "label": "Tydzień",
+                "value": "week",
+                "type": "str"
+            },
+            {
+                "label": "Miesiąc",
+                "value": "month",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "typeIsComboBox": true,
+        "msgTrigger": "onChange",
+        "x": 440,
+        "y": 340,
+        "wires": [
+            [
+                "c732ca436ea0348d"
+            ]
+        ]
+    },
+    {
+        "id": "c732ca436ea0348d",
+        "type": "function",
+        "z": "c9e790c3484907f0",
+        "name": "function 23",
+        "func": "global.set(\"okres\", msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 810,
+        "y": 340,
+        "wires": [
+            [
+                "4800aebf7831d34e"
+            ]
+        ]
+    },
+    {
+        "id": "a9f93a46d952a551",
+        "type": "ui-dropdown",
+        "z": "c9e790c3484907f0",
+        "group": "361c5c781142a986",
+        "name": "",
+        "label": "Grupuj wykres według:",
+        "tooltip": "",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "multiple": false,
+        "chips": false,
+        "clearable": false,
+        "options": [
+            {
+                "label": "Dzień",
+                "value": "day",
+                "type": "str"
+            },
+            {
+                "label": "Tydzień",
+                "value": "week",
+                "type": "str"
+            },
+            {
+                "label": "Miesiąc",
+                "value": "month",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "typeIsComboBox": true,
+        "msgTrigger": "onChange",
+        "x": 420,
+        "y": 420,
+        "wires": [
+            [
+                "74b8700dfc149c1b"
+            ]
+        ]
+    },
+    {
+        "id": "74b8700dfc149c1b",
+        "type": "function",
+        "z": "c9e790c3484907f0",
+        "name": "function 24",
+        "func": "global.set(\"okres_o\", msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 670,
+        "y": 420,
+        "wires": [
+            [
+                "015dd513fcdf239a"
+            ]
+        ]
+    },
+    {
+        "id": "4c48bb7f0308fda9",
+        "type": "http request",
+        "z": "c9e790c3484907f0",
+        "name": "",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 590,
+        "y": 240,
+        "wires": [
+            [
+                "ce646c6a49f56c11",
+                "c0e3f31a6e7598e8"
+            ]
+        ]
+    },
+    {
+        "id": "c62dbb1208cbd1ee",
+        "type": "ui-chart",
+        "z": "c9e790c3484907f0",
+        "group": "361c5c781142a986",
+        "name": "Wykres odrzuconych transakcji",
+        "label": "Wykres odrzuconych transakcji",
+        "order": 2,
+        "chartType": "line",
+        "category": "",
+        "categoryType": "none",
+        "xAxisLabel": "Dzień",
+        "xAxisProperty": "okres",
+        "xAxisPropertyType": "property",
+        "xAxisType": "time",
+        "xAxisFormat": "",
+        "xAxisFormatType": "auto",
+        "xmin": "",
+        "xmax": "",
+        "yAxisLabel": "Liczba odczuconych",
+        "yAxisProperty": "odrzucone",
+        "yAxisPropertyType": "property",
+        "ymin": "",
+        "ymax": "",
+        "bins": 10,
+        "action": "replace",
+        "stackSeries": false,
+        "pointShape": "circle",
+        "pointRadius": 4,
+        "showLegend": true,
+        "removeOlder": 1,
+        "removeOlderUnit": "3600",
+        "removeOlderPoints": "",
+        "colors": [
+            "#0095ff",
+            "#ff0000",
+            "#ff7f0e",
+            "#2ca02c",
+            "#a347e1",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "textColor": [
+            "#666666"
+        ],
+        "textColorDefault": true,
+        "gridColor": [
+            "#e5e5e5"
+        ],
+        "gridColorDefault": true,
+        "width": 6,
+        "height": 8,
+        "className": "",
+        "interpolation": "linear",
+        "x": 1130,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ce646c6a49f56c11",
+        "type": "function",
+        "z": "c9e790c3484907f0",
+        "name": "function 25",
+        "func": "\nconst punktyOdrzucone = msg.payload.rejected.map(r => ({\n    okres: r.period,\n    odrzucone: r.rejected\n}));\n\nreturn [\n    [{ payload: [] }, { payload: punktyOdrzucone }]\n];",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 860,
+        "y": 240,
+        "wires": [
+            [
+                "c62dbb1208cbd1ee"
+            ]
+        ]
+    },
+    {
+        "id": "015dd513fcdf239a",
+        "type": "function",
+        "z": "c9e790c3484907f0",
+        "name": "function 26",
+        "func": "const token = global.get(\"token\");\nif (!token) return null;\nconst okres = global.get(\"okres_o\") || \"day\";\n\nmsg.headers = { \"Authorization\": \"Bearer \" + token };\nmsg.url = \"http://api:8000/api/v1/analytics/timeseries?group_by=\" + okres;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 290,
+        "y": 240,
+        "wires": [
+            [
+                "4c48bb7f0308fda9"
+            ]
+        ]
+    },
+    {
+        "id": "c0e3f31a6e7598e8",
+        "type": "debug",
+        "z": "c9e790c3484907f0",
+        "name": "debug 10",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 740,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "f17cc6fcc0046806",
+        "type": "ui-form",
+        "z": "5a5b0669479cd4b8",
+        "name": "",
+        "group": "31ee8d94a17a9fe8",
+        "label": "Formularz dodawania firmy",
+        "order": 1,
+        "width": "6",
+        "height": "5",
+        "options": [
+            {
+                "label": "Nazwa firmy",
+                "key": "name",
+                "type": "text",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "Wersja schematu",
+                "key": "schema_version",
+                "type": "text",
+                "required": false,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "name": "",
+            "schema_version": ""
+        },
+        "payload": "",
+        "submit": "Dodaj firme",
+        "cancel": "Wyczyść",
+        "resetOnSubmit": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "splitLayout": "",
+        "className": "",
+        "passthru": false,
+        "dropdownOptions": [],
+        "x": 360,
+        "y": 140,
+        "wires": [
+            [
+                "b8fa649d8558aadd",
+                "891246ef22bbdb5b"
+            ]
+        ]
+    },
+    {
+        "id": "b8fa649d8558aadd",
+        "type": "function",
+        "z": "5a5b0669479cd4b8",
+        "name": "function 12",
+        "func": "const token = global.get(\"token\");\nmsg.headers = {\n    \"Authorization\": \"Bearer \" + token,\n    \"Content-Type\": \"application/json\"\n};\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 590,
+        "y": 140,
+        "wires": [
+            [
+                "6ba17cf51ec81f31"
+            ]
+        ]
+    },
+    {
+        "id": "6ba17cf51ec81f31",
+        "type": "http request",
+        "z": "5a5b0669479cd4b8",
+        "name": "",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "http://api:8000/api/v1/sources",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 790,
+        "y": 140,
+        "wires": [
+            [
+                "203b5cd338335121"
+            ]
+        ]
+    },
+    {
+        "id": "d7746af13019bb9b",
+        "type": "http request",
+        "z": "5a5b0669479cd4b8",
+        "name": "",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "http://api:8000/api/v1/sources",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 750,
+        "y": 320,
+        "wires": [
+            [
+                "24a8b3b32e81ebe5"
+            ]
+        ]
+    },
+    {
+        "id": "ac63a06308f7e6d1",
+        "type": "inject",
+        "z": "5a5b0669479cd4b8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 370,
+        "y": 320,
+        "wires": [
+            [
+                "a3c4537af0cebe55"
+            ]
+        ]
+    },
+    {
+        "id": "a3c4537af0cebe55",
+        "type": "function",
+        "z": "5a5b0669479cd4b8",
+        "name": "function 13",
+        "func": "const token = global.get(\"token\");\nif (!token) return null; \nmsg.headers = { \"Authorization\": \"Bearer \" + token };\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 550,
+        "y": 320,
+        "wires": [
+            [
+                "d7746af13019bb9b",
+                "d64db0a2aa717bec"
+            ]
+        ]
+    },
+    {
+        "id": "891246ef22bbdb5b",
+        "type": "debug",
+        "z": "5a5b0669479cd4b8",
+        "name": "debug 8",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 700,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "24a8b3b32e81ebe5",
+        "type": "function",
+        "z": "5a5b0669479cd4b8",
+        "name": "function 14",
+        "func": "msg.payload = msg.payload.map(s => ({\n    \"ID Źródła\": s.id,\n    \"Nazwa firmy\": s.name,\n    \"Wersja\": s.schema_version,\n    \"Aktywne\": s.active ? \"Tak\" : \"Nie\"\n}));\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 970,
+        "y": 320,
+        "wires": [
+            [
+                "c0f0586ab7e826d3"
+            ]
+        ]
+    },
+    {
+        "id": "c0f0586ab7e826d3",
+        "type": "ui-table",
+        "z": "5a5b0669479cd4b8",
+        "group": "31ee8d94a17a9fe8",
+        "name": "",
+        "label": "Tabela firm",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "maxrows": 0,
+        "passthru": false,
+        "autocols": true,
+        "showSearch": true,
+        "deselect": true,
+        "selectionType": "none",
+        "columns": [],
+        "mobileBreakpoint": "sm",
+        "mobileBreakpointType": "defaults",
+        "action": "replace",
+        "className": "",
+        "x": 1310,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ee0cf102ed90d037",
+        "type": "ui-form",
+        "z": "5a5b0669479cd4b8",
+        "name": "",
+        "group": "28b17724203cf2f9",
+        "label": "Formularz dodawania klientów",
+        "order": 1,
+        "width": "6",
+        "height": "7",
+        "options": [
+            {
+                "label": "E-mail klienta",
+                "key": "email",
+                "type": "text",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "Hasło",
+                "key": "password",
+                "type": "password",
+                "required": false,
+                "rows": null
+            },
+            {
+                "label": "Rola",
+                "key": "role",
+                "type": "dropdown",
+                "required": false,
+                "rows": null
+            },
+            {
+                "label": "ID Źródła",
+                "key": "source_id",
+                "type": "number",
+                "required": false,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "email": "",
+            "password": "",
+            "role": "",
+            "source_id": ""
+        },
+        "payload": "",
+        "submit": "Dodaj konto",
+        "cancel": "Wyczyść",
+        "resetOnSubmit": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "splitLayout": "",
+        "className": "",
+        "passthru": false,
+        "dropdownOptions": [
+            {
+                "dropdown": "role",
+                "value": "client",
+                "label": "Klient"
+            },
+            {
+                "dropdown": "role",
+                "value": "admin",
+                "label": "Administrator"
+            }
+        ],
+        "x": 270,
+        "y": 480,
+        "wires": [
+            [
+                "a4c4de4bd40fdf56"
+            ]
+        ]
+    },
+    {
+        "id": "a4c4de4bd40fdf56",
+        "type": "function",
+        "z": "5a5b0669479cd4b8",
+        "name": "function 15",
+        "func": "const token = global.get(\"token\");\nmsg.headers = {\n    \"Authorization\": \"Bearer \" + token,\n    \"Content-Type\": \"application/json\"\n};\nmsg.payload = {\n    email: msg.payload.email,\n    password: msg.payload.password,\n    role: msg.payload.role,\n    source_id: msg.payload.role === \"admin\" ? null : Number(msg.payload.source_id)\n};\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 570,
+        "y": 480,
+        "wires": [
+            [
+                "fb4f1846cd8811e6"
+            ]
+        ]
+    },
+    {
+        "id": "fb4f1846cd8811e6",
+        "type": "http request",
+        "z": "5a5b0669479cd4b8",
+        "name": "",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "http://api:8000/api/v1/users",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 770,
+        "y": 480,
+        "wires": [
+            [
+                "d336b9abb0249dfe"
+            ]
+        ]
+    },
+    {
+        "id": "d336b9abb0249dfe",
+        "type": "function",
+        "z": "5a5b0669479cd4b8",
+        "name": "function 16",
+        "func": "if (msg.statusCode === 201) {\n    msg.payload = `Utworzono konto: ${msg.payload.email} (ID: ${msg.payload.id})`;\n} else {\n    msg.payload = `Błąd: ${msg.payload.detail || msg.statusCode}`;\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 990,
+        "y": 480,
+        "wires": [
+            [
+                "015de92b170c657f"
+            ]
+        ]
+    },
+    {
+        "id": "015de92b170c657f",
+        "type": "ui-notification",
+        "z": "5a5b0669479cd4b8",
+        "ui": "sag_ui_base_1",
+        "position": "center center",
+        "colorDefault": true,
+        "color": "#000000",
+        "displayTime": "5",
+        "showCountdown": true,
+        "outputs": 1,
+        "allowDismiss": true,
+        "dismissText": "Close",
+        "allowConfirm": false,
+        "confirmText": "Confirm",
+        "raw": false,
+        "className": "",
+        "name": "",
+        "x": 1290,
+        "y": 480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1e9924c184c0f631",
+        "type": "function",
+        "z": "5a5b0669479cd4b8",
+        "name": "function 17",
+        "func": "const token = global.get(\"token\");\nif (!token) return null;\nmsg.headers = { \"Authorization\": \"Bearer \" + token };\nmsg.payload = {};\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 490,
+        "y": 700,
+        "wires": [
+            [
+                "c69550346224b660"
+            ]
+        ]
+    },
+    {
+        "id": "36bf913c128c9775",
+        "type": "ui-form",
+        "z": "5a5b0669479cd4b8",
+        "name": "",
+        "group": "a299396bd5c03814",
+        "label": "Formularz wysyłania transakcji",
+        "order": 1,
+        "width": "6",
+        "height": "9",
+        "options": [
+            {
+                "label": "ID źródła",
+                "key": "source_id",
+                "type": "number",
+                "required": false,
+                "rows": null
+            },
+            {
+                "label": "Numer referncyjny",
+                "key": "external_ref",
+                "type": "text",
+                "required": false,
+                "rows": null
+            },
+            {
+                "label": "Kwota",
+                "key": "amount",
+                "type": "number",
+                "required": false,
+                "rows": null
+            },
+            {
+                "label": "Waluta",
+                "key": "currency",
+                "type": "text",
+                "required": false,
+                "rows": null
+            },
+            {
+                "label": "Status",
+                "key": "status",
+                "type": "dropdown",
+                "required": false,
+                "rows": null
+            },
+            {
+                "label": "Data",
+                "key": "timestamp",
+                "type": "date",
+                "required": false,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "source_id": "",
+            "external_ref": "",
+            "amount": "",
+            "currency": "",
+            "status": "",
+            "timestamp": ""
+        },
+        "payload": "",
+        "submit": "Dodaj transakcje",
+        "cancel": "Wyczyść",
+        "resetOnSubmit": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "splitLayout": "",
+        "className": "",
+        "passthru": false,
+        "dropdownOptions": [
+            {
+                "dropdown": "",
+                "value": "EUR",
+                "label": "EUR"
+            },
+            {
+                "dropdown": "",
+                "value": "PLN",
+                "label": "PLN"
+            },
+            {
+                "dropdown": "",
+                "value": "USD",
+                "label": "USD"
+            },
+            {
+                "dropdown": "status",
+                "value": "completed",
+                "label": "Zakończone"
+            },
+            {
+                "dropdown": "status",
+                "value": "pending",
+                "label": "W realizacji"
+            }
+        ],
+        "x": 130,
+        "y": 560,
+        "wires": [
+            [
+                "79a0f84e75e788f8"
+            ]
+        ]
+    },
+    {
+        "id": "79a0f84e75e788f8",
+        "type": "function",
+        "z": "5a5b0669479cd4b8",
+        "name": "function 18",
+        "func": "const token = global.get(\"token\");\nconst p = msg.payload;\nmsg.headers = {\n    \"Authorization\": \"Bearer \" + token,\n    \"Content-Type\": \"application/json\"\n};\nmsg.payload = {\n    source_id: Number(p.source_id),\n    transactions: [{\n        external_ref: p.external_ref,\n        amount: Number(p.amount),\n        currency: p.currency,\n        timestamp: p.timestamp,\n        status: p.status\n    }]\n};\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 430,
+        "y": 560,
+        "wires": [
+            [
+                "28ef241acce877e1"
+            ]
+        ]
+    },
+    {
+        "id": "28ef241acce877e1",
+        "type": "http request",
+        "z": "5a5b0669479cd4b8",
+        "name": "",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "http://api:8000/api/v1/ingest",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 630,
+        "y": 560,
+        "wires": [
+            [
+                "44289bb71034133e",
+                "1e9924c184c0f631"
+            ]
+        ]
+    },
+    {
+        "id": "44289bb71034133e",
+        "type": "function",
+        "z": "5a5b0669479cd4b8",
+        "name": "function 19",
+        "func": "if (msg.statusCode === 201) {\n    msg.payload = `✅ Wysłano transakcję! (Przyjęto rekordów: ${msg.payload.processed_count}) — uruchom ETL, aby ją przetworzyć.`;\n} else {\n    msg.payload = `❌ Błąd wysyłania: ${msg.payload.detail || msg.statusCode}`;\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 810,
+        "y": 560,
+        "wires": [
+            [
+                "015de92b170c657f"
+            ]
+        ]
+    },
+    {
+        "id": "c69550346224b660",
+        "type": "http request",
+        "z": "5a5b0669479cd4b8",
+        "name": "",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "http://api:8000/api/v1/etl/run",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 710,
+        "y": 700,
+        "wires": [
+            [
+                "4bf22b6b79abe468"
+            ]
+        ]
+    },
+    {
+        "id": "4bf22b6b79abe468",
+        "type": "function",
+        "z": "5a5b0669479cd4b8",
+        "name": "function 20",
+        "func": "const r = msg.payload;\nmsg.payload = `Zakończono! Nowe czyste transakcje: ${r.clean_count} | Wykryte błędy: ${r.error_count}`;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 910,
+        "y": 700,
+        "wires": [
+            [
+                "015de92b170c657f"
+            ]
+        ]
+    },
+    {
+        "id": "d64db0a2aa717bec",
+        "type": "http request",
+        "z": "5a5b0669479cd4b8",
+        "name": "",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "http://api:8000/api/v1/users",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 750,
+        "y": 260,
+        "wires": [
+            [
+                "5d22967e8e4cbabc"
+            ]
+        ]
+    },
+    {
+        "id": "5d22967e8e4cbabc",
+        "type": "function",
+        "z": "5a5b0669479cd4b8",
+        "name": "function 22",
+        "func": "msg.payload = msg.payload.map(u => ({\n    \"ID\": u.id,\n    \"E-mail\": u.email,\n    \"Rola\": u.role === \"admin\" ? \"Administrator\" : \"Klient\",\n    \"ID Źródła\": u.source_id ? u.source_id : \"Wszystkie (Admin)\",\n    \"Aktywny\": u.active ? \"Tak\" : \"Nie\",\n    \"Utworzono\": u.created_at.replace(\"T\", \" \").slice(0, 19)\n}));\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 970,
+        "y": 260,
+        "wires": [
+            [
+                "21311dab99dbb360"
+            ]
+        ]
+    },
+    {
+        "id": "21311dab99dbb360",
+        "type": "ui-table",
+        "z": "5a5b0669479cd4b8",
+        "group": "28b17724203cf2f9",
+        "name": "",
+        "label": "Lista użytkowników",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "maxrows": 0,
+        "passthru": false,
+        "autocols": true,
+        "showSearch": true,
+        "deselect": true,
+        "selectionType": "none",
+        "columns": [],
+        "mobileBreakpoint": "sm",
+        "mobileBreakpointType": "defaults",
+        "action": "replace",
+        "className": "",
+        "x": 1310,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "203b5cd338335121",
+        "type": "function",
+        "z": "5a5b0669479cd4b8",
+        "name": "function 21",
+        "func": "if (msg.statusCode === 201) {\n    msg.payload = `Dodano firme: ${msg.payload.name} (Wersja: ${msg.payload.schema_version})`;\n} else {\n    msg.payload = `Błąd: ${msg.payload.detail || msg.statusCode}`;\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1010,
+        "y": 140,
+        "wires": [
+            [
+                "015de92b170c657f"
+            ]
+        ]
+    },
+    {
+        "id": "2c69548e87c19aa6",
+        "type": "debug",
+        "z": "5a5b0669479cd4b8",
+        "name": "debug 9",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 960,
+        "y": 80,
+        "wires": []
+    }
+]

@@ -46,3 +46,8 @@ async def register_user(user: UserCreate, db: AsyncSession = Depends(get_db)):
     await db.commit()
     await db.refresh(new_user)
     return new_user
+
+@router.get("", response_model=list[UserResponse], dependencies=[Depends(require_admin)])
+async def list_users(db: AsyncSession = Depends(get_db)):
+    result = await db.execute(select(User).order_by(User.id))
+    return result.scalars().all()
